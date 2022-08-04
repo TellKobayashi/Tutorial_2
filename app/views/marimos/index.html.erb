@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Marimos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marimos.each do |marimo| %>
+      <tr>
+        <td><%= marimo.name %></td>
+        <td><%= marimo.email %></td>
+        <td><%= link_to 'Show', marimo %></td>
+        <td><%= link_to 'Edit', edit_marimo_path(marimo) %></td>
+        <td><%= link_to 'Destroy', marimo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Marimo', new_marimo_path %>
